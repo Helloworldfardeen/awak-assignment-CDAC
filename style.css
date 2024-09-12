@@ -1,0 +1,259 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+ :root {
+    --accent-color: #4CAF50;   
+    --base-color: #FFFFFF;      
+    --text-color: #333333;      
+    --input-color: #E8F5E9;     
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: Poppins, 'Segoe UI', sans-serif;
+    font-size: 12pt;
+    color: var(--text-color);
+    text-align: center;
+}
+
+body {
+    min-height: 100vh;
+    background-color: cover;
+    background-image: url(resource/background3.jpg);
+    background-position: right;
+    display: flex;
+   
+}
+
+.wrapper {
+    box-sizing: border-box;
+    background-color: var(--base-color);
+    height: auto; /* Adjust height to fit content */
+    width: max(40%, 600px);
+    padding: 40px;
+    border-radius: 0 20px 20px 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex; 
+}
+#togglePassword{
+  margin-top: 3%;
+  margin-left: 0.5%;
+
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+form {
+    width: min(400px, 100%);
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+form > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form lable {
+    flex-shrink: 0;
+    height: 50px;
+    width: 50;
+    background-color: var(--accent-color);
+    fill: var(--base-color);
+    color: var(--base-color);
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
+form input {
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid var(--input-color);
+    border-left: none;
+    background-color: var(--input-color);
+    transition: 150ms ease;
+}
+
+form input:hover {
+    border-color: var(--accent-color);
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--text-color);
+}
+
+div:has(input:focus)>label {
+    background-color: var(--text-color);
+}
+
+form input ::placeholder {
+    color: var(--text-color);
+    opacity: 1;
+
+}
+
+form button {
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em;
+    background-color: var(--accent-color);
+    color: var(--base-color);
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--text-color);
+
+}
+
+form button:focus {
+    outline: none;
+    background-color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ 
+/*  for  Tablet */
+@media (max-width: 1100px) {
+    body {
+        padding-left: 0;
+        justify-content: center;
+        align-items: center; 
+    }
+    
+    .wrapper {
+        width: 90%; 
+        border-radius: 0; 
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem; 
+    }
+
+    form {
+        width: 100%; 
+    }
+}
+
+/*  for Mobile  */
+@media (max-width: 768px) {
+    body {
+        padding-left: 0;
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: center; 
+    }
+
+    .wrapper {
+        width: 95%; 
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    form button {
+        width: 100%;
+        padding: 1em; 
+    }
+
+    #togglePassword {
+        right: 10px; 
+        top: 50%;
+    }
+
+    form input {
+        padding: 0.75em; 
+    }
+}
+
+
+
+form div.incorrect label{
+    background-color:red ;
+
+}
+form div.incorrect input{
+    border-color: red;
+}
+#error-message{
+   color: red; 
+}  
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.loader {
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #3498db; 
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+   margin-left: 500px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
